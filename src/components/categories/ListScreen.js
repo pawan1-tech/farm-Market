@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 import { colors } from '../../globals/style';
-
+import { useRoute } from '@react-navigation/native';
 
 const ListScreen = ({ navigation, route }) => {
-  const [selectedCategory, setSelectedCategory] = useState(route.params.selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
+    if (route.params) {
+      setSelectedCategory(route.params.selectedCategory);
+    }
     fetchListings();
-  }, []);
+  }, [route.params]);
 
   const fetchListings = () => {
     // Replace this with your API call to fetch listings based on the selected category

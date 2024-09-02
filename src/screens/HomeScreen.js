@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import { useRoute, useNavigation  } from '@react-navigation/native';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, StatusBar, Animated } from 'react-native';
 import Octicons from '@expo/vector-icons/Octicons';
 import { colors } from '../globals/style';
 import BottomTabNavigator from '../components/BottomTabNavigator';
 import Categories from '../components/Categories';
+import FloatingChat from '../components/FloatingChat';
+import FloatingAdd from '../components/FloatingAdd';
+import StorySectionScreen from '../components/StorySectionScreen';
+import ListScreen from '../components/categories/ListScreen';
+import CategoryList from '../components/categorylist';
 
 const HomeScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -22,6 +28,9 @@ const HomeScreen = () => {
     setIsSearching(false);
   };
 
+  const route = useRoute();
+  const navigation = useNavigation(); // Add this line
+
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -36,6 +45,7 @@ const HomeScreen = () => {
           onBlur={handleSearchBlur}
         />
       </View>
+      <StorySectionScreen />
       {isSearching ? (
         <View style={styles.searchResults}>
           {/* Display search results here */}
@@ -44,6 +54,14 @@ const HomeScreen = () => {
       ) : (
         <Categories isSearching={isSearching} />
       )}
+      {/* <ListScreen route={route} navigation={navigation} /> */}
+
+      <CategoryList />
+
+      
+
+      <FloatingChat />
+      {/* <FloatingAdd /> */}
       <View style={[styles.bottomTab, isSearching ? styles.blur : null]}>
         <BottomTabNavigator style={isSearching ? styles.blur : null} />
       </View>
@@ -90,7 +108,7 @@ const styles = StyleSheet.create({
     borderTopColor: colors.text1, 
   },
   blur: {
-    opacity: 0.5, // changed from 0 to 0.5 to make it semi-transparent
+    opacity: 0, // changed from 0 to 0.5 to make it semi-transparent
   },
   searchResults: {
     flex: 1,
