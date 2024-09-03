@@ -4,6 +4,11 @@ import WelcomeScreen from './LoginSignupScreens/WelcomeScreen';
 import LoginScreen from './LoginSignupScreens/LoginScreen';
 import SignupScreen from './LoginSignupScreens/SignupScreen';
 import HomeScreen from './HomeScreen';
+import UserScreen from './(Tabs)/UserScreen';
+import PreBookingScreen from './(Tabs)/PreBookingScreen';
+import AddScreen from './(Tabs)/AddScreen';
+import CartScreen from './(Tabs)/CartScreen';
+import MenuScreen from './(Tabs)/MenuScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -34,6 +39,38 @@ export class AuthNavigation extends Component {
                 headerShown: false,
             }}
         />
+
+        <Stack.Screen name="userpage" component={UserScreen}  
+            options ={{
+                headerShown: false,
+            }}
+        />
+
+        <Stack.Screen name="prebookingpage" component={PreBookingScreen}  
+            options ={{
+                headerShown: false,
+            }}
+        />
+
+        <Stack.Screen name="addpage" component={AddScreen}  
+            options ={{
+                headerShown: false,
+            }}
+        />
+
+        <Stack.Screen name="cartpage" component={CartScreen}  
+            options ={{
+                headerShown: false,
+            }}
+        />
+
+
+        <Stack.Screen name="menupage" component={MenuScreen}  
+            options ={{
+                headerShown: false,
+            }}
+        />
+
       </Stack.Navigator>
     )
   }

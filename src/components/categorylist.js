@@ -10,8 +10,8 @@ const CategoryList = ({ navigation }) => {
       id: 1,
       name: 'Seeds',
       description: 'High-quality seeds for your garden',
-      price: 10.99,
-      location: 'New York',
+      price: 109,
+      location: 'Rampur',
       time: 'Posted 2 hours ago',
       image: require('../../assets/story/story1.jpg'),
     },
@@ -19,8 +19,8 @@ const CategoryList = ({ navigation }) => {
       id: 2,
       name: 'Products',
       description: 'Best products for your garden',
-      price: 20.99,
-      location: 'Los Angeles',
+      price: 209,
+      location: 'Naturanagar',
       time: 'Posted 1 hour ago',
       image: require('../../assets/story/story2.jpg'),
     },
@@ -28,8 +28,8 @@ const CategoryList = ({ navigation }) => {
       id: 3,
       name: 'Fertilizers',
       description: 'Organic fertilizers for your garden',
-      price: 15.99,
-      location: 'Chicago',
+      price: 159,
+      location: 'Furfurinagar',
       time: 'Posted 3 hours ago',
       image: require('../../assets/story/story3.jpg'),
     },
@@ -43,7 +43,7 @@ const CategoryList = ({ navigation }) => {
           <View style={styles.infoBox}>
             <Text style={styles.name}>{category.name}</Text>
             <Text style={styles.description}>{category.description}</Text>
-            <Text style={styles.price}>${category.price}</Text>
+            <Text style={styles.price}>Rs.{category.price}</Text>
             <Text style={styles.location}>{category.location}</Text>
             <Text style={styles.time}>{category.time}</Text>
           </View>

@@ -6,12 +6,11 @@ import { colors } from '../globals/style';
 import BottomTabNavigator from '../components/BottomTabNavigator';
 import Categories from '../components/Categories';
 import FloatingChat from '../components/FloatingChat';
-import FloatingAdd from '../components/FloatingAdd';
+
 import StorySectionScreen from '../components/StorySectionScreen';
-import ListScreen from '../components/categories/ListScreen';
 import CategoryList from '../components/categorylist';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
   const [searchValue, setSearchValue] = useState('');
@@ -28,8 +27,6 @@ const HomeScreen = () => {
     setIsSearching(false);
   };
 
-  const route = useRoute();
-  const navigation = useNavigation(); // Add this line
 
   return (
     <View style={styles.container}>
@@ -61,7 +58,7 @@ const HomeScreen = () => {
       
 
       <FloatingChat />
-      {/* <FloatingAdd /> */}
+      
       <View style={[styles.bottomTab, isSearching ? styles.blur : null]}>
         <BottomTabNavigator style={isSearching ? styles.blur : null} />
       </View>

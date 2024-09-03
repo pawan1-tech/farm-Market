@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import UserScreen from '../screens/(Tabs)/UserScreen';
-import ProductScreen from '../screens/(Tabs)/ProductScreen';
+import PreBookingScreen from '../screens/(Tabs)/PreBookingScreen';
 import CartScreen from '../screens/(Tabs)/CartScreen';
 import MenuScreen from '../screens/(Tabs)/MenuScreen';
 import { colors } from '../globals/style';
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 
 const AddScreen = () => null; // or return a custom component if needed
 
-const BottomTabNavigator = () => {
+const BottomTabNavigator = ({ navigation }) => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -58,17 +58,19 @@ const BottomTabNavigator = () => {
           ),
           tabBarLabel: 'User',
           tabBarLabelStyle: styles.tabBarLabel,
+          onPress: () => navigation.navigate('UserDetails'), // Add navigation to UserDetails screen
         }}
       />
       <Tab.Screen
-        name="Products"
-        component={ProductScreen}
+        name="PreBooking"
+        component={PreBookingScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="book" size={size} color={color} />
           ),
-          tabBarLabel: 'Products',
+          tabBarLabel: 'Pre-Booking',
           tabBarLabelStyle: styles.tabBarLabel,
+          onPress: () => navigation.navigate('PreBookingDetails'), // Add navigation to PreBookingDetails screen
         }}
       />
       <Tab.Screen
@@ -81,6 +83,7 @@ const BottomTabNavigator = () => {
             </View>
           ),
           tabBarLabel: '',
+          onPress: () => navigation.navigate('AddScreenDetails'), // Add navigation to AddScreenDetails screen
         }}
       />
       <Tab.Screen
@@ -92,6 +95,7 @@ const BottomTabNavigator = () => {
           ),
           tabBarLabel: 'Cart',
           tabBarLabelStyle: styles.tabBarLabel,
+          onPress: () => navigation.navigate('CartDetails'), // Add navigation to CartDetails screen
         }}
       />
       <Tab.Screen
@@ -103,6 +107,7 @@ const BottomTabNavigator = () => {
           ),
           tabBarLabel: 'Menu',
           tabBarLabelStyle: styles.tabBarLabel,
+          onPress: () => navigation.navigate('MenuDetails'), // Add navigation to MenuDetails screen
         }}
       />
     </Tab.Navigator>
