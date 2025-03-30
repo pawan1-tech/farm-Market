@@ -4,21 +4,12 @@
 
 ---
 
-## 📱 Screenshots
-
-### Welcome Screen
-![Welcome Screen](./assets/screenshots/welcome.png)
-
-### Sign In Screen
-![Sign In Screen](./assets/screenshots/signin.png)
-
-### Sign Up Screen
-![Sign Up Screen](./assets/screenshots/signup.png)
-
-### Home Screen
-![Home Screen](./assets/screenshots/Home.jpeg)
-
-*(Make sure to replace the image links with actual screenshots of your app)*
+<p align="center">
+  <img src="./assets/screenshots/Welcome.jpeg" width="200"/>
+  <img src="./assets/screenshots/SignUp.jpeg" width="200"/>
+  <img src="./assets/screenshots/SignIn.jpeg" width="200"/>
+  <img src="./assets/screenshots/Home.jpeg" width="200"/>
+</p>
 
 ---
 
