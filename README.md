@@ -16,7 +16,7 @@
 ![Sign Up Screen](./assets/screenshots/signup.png)
 
 ### Home Screen
-![Home Screen](./assets/screenshots/home.png)
+![Home Screen](./assets/screenshots/Home.jpeg)
 
 *(Make sure to replace the image links with actual screenshots of your app)*
 
